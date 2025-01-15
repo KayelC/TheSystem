@@ -8,14 +8,19 @@ public class Quest
     public List<Task> Tasks { get; private set; }
     public bool IsCompleted => Tasks.All(t => t.IsCompleted);
 
+    private DateTime lastResetDate;
+
     public Quest(string title, List<Task> tasks)
     {
         Title = title;
         Tasks = tasks;
+        lastResetDate = DateTime.Now.Date; // Initialize to today's date
     }
 
     public void AddTaskProgress(int taskIndex, int amount)
     {
+        CheckForReset(); // Automatically reset if needed
+
         if (taskIndex < 0 || taskIndex >= Tasks.Count)
         {
             Console.WriteLine("Invalid task index!");
@@ -36,11 +41,21 @@ public class Quest
         {
             task.Reset();
         }
-        Console.WriteLine($"Quest '{Title}' has been reset and is ready to be repeated!");
+        lastResetDate = DateTime.Now.Date; // Update reset date
+        Console.WriteLine($"Quest '{Title}' has been reset and is ready for a new day!");
+    }
+
+    private void CheckForReset()
+    {
+        if (DateTime.Now.Date > lastResetDate)
+        {
+            Reset();
+        }
     }
 
     public override string ToString()
     {
+        CheckForReset(); // Ensure up-to-date status
         string taskDetails = string.Join("\n", Tasks.Select((t, i) => $"{i + 1}. {t}"));
         return $"{Title}\n{taskDetails}\nStatus: {(IsCompleted ? "Completed" : "In Progress")}";
     }

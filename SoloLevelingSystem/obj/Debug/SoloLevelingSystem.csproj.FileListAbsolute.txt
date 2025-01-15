@@ -5,3 +5,10 @@ C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\obj\Debug\Solo
 C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.csproj.CoreCompileInputs.cache
 C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.exe
 C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.pdb
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\bin\Debug\SoloLevelingSystem.exe.config
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\bin\Debug\SoloLevelingSystem.exe
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\bin\Debug\SoloLevelingSystem.pdb
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.csproj.AssemblyReference.cache
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.csproj.CoreCompileInputs.cache
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.exe
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.pdb
