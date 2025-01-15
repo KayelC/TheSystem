@@ -1,0 +1,7 @@
+C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\bin\Debug\SoloLevelingSystem.exe.config
+C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\bin\Debug\SoloLevelingSystem.exe
+C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\bin\Debug\SoloLevelingSystem.pdb
+C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.csproj.AssemblyReference.cache
+C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.csproj.CoreCompileInputs.cache
+C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.exe
+C:\Users\kayel\source\repos\SoloLevelingSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.pdb
