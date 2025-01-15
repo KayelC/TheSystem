@@ -30,6 +30,15 @@ public class Quest
         }
     }
 
+    public void Reset()
+    {
+        foreach (var task in Tasks)
+        {
+            task.Reset();
+        }
+        Console.WriteLine($"Quest '{Title}' has been reset and is ready to be repeated!");
+    }
+
     public override string ToString()
     {
         string taskDetails = string.Join("\n", Tasks.Select((t, i) => $"{i + 1}. {t}"));

@@ -33,6 +33,12 @@ public class Task
         }
     }
 
+    public void Reset()
+    {
+        Progress = 0;
+        Console.WriteLine($"Task '{Description}' progress reset.");
+    }
+
     public override string ToString()
     {
         return $"{Description} - {Progress}/{Target} ({(IsCompleted ? "Completed" : "In Progress")})";
