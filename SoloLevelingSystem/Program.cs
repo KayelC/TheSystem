@@ -16,16 +16,18 @@ class Program
             new Task("100 Push-Ups", 100),
             new Task("Stretching for 15 Minutes", 15),
             new Task("3 km Run", 3)
-        }),
+        }, "[Daily Quest : Strength Training Has Arrived.]"),
+            
         new Quest("Penalty Quest", new List<Task>
         {
             new Task("Survive For The Alloted Time", 4),
-        }),
+        }, "[Penalty Quest : Survival]"),
+
         new Quest("Job Change Quest", new List<Task>
         {
             new Task("Spar", 10),
-            new Task("Win a Fight", 1)
-        })
+            new Task("Win a Bout", 1)
+        }, "[Job Change Quest : Meet The Requirements To Change Your Job]")
     };
 
         Quest currentQuest = availableQuests[0]; // Default to the first quest

@@ -10,14 +10,17 @@ public class Quest
     public List<Task> Tasks { get; private set; }
     public bool IsCompleted => Tasks.All(t => t.IsCompleted);
 
+    public string Message { get; private set; }
+
     private DateTime lastResetDate;
 
     public bool HasGivenReward { get; private set; } // New field
 
-    public Quest(string title, List<Task> tasks)
+    public Quest(string title, List<Task> tasks, string message)
     {
         Title = title;
         Tasks = tasks;
+        Message = message;
         lastResetDate = DateTime.Now.Date;
     }
 
@@ -111,6 +114,6 @@ public class Quest
     {
         CheckForReset(); // Ensure up-to-date status
         string taskDetails = string.Join("\n", Tasks.Select((t, i) => $"{i + 1}. {t}"));
-        return $"{Title}\n{taskDetails}\nStatus: {(IsCompleted ? "Completed" : "In Progress")}";
+        return $"{Title}\n{Message}\n{taskDetails}\nStatus: {(IsCompleted ? "Completed" : "In Progress")}";
     }
 }
