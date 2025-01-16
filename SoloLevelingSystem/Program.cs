@@ -24,7 +24,7 @@ class Program
             Console.WriteLine("===== Fitness Journal =====");
             Console.WriteLine($"Player: {player.Name}, Level: {player.Level}, XP: {player.CurrentXP}/{player.XPToNextLevel}");
             Console.WriteLine($"Stats: STR={player.Strength}, AGI={player.Agility}, VIT={player.Vitality}");
-            Console.WriteLine("\n1. View Daily Quest\n2. Add Progress to Task\n3. Exit");
+            Console.WriteLine("\n1. View Daily Quest\n2. Add Progress to Task\n3. Load Progress\n4. Save and Exit");
             Console.Write("Choose an action: ");
 
             string choice = Console.ReadLine();
@@ -69,7 +69,15 @@ class Program
                     break;
 
                 case "3":
+                    Console.WriteLine("Loading Progress");
+                    player.LoadProgress();
+                    dailyQuest.LoadState();
+                    break;
+
+                case "4":
                     Console.WriteLine("Exiting the Fitness Journal...");
+                    player.SaveProgress();
+                    dailyQuest.SaveState();
                     return;
 
                 default:

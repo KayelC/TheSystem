@@ -1,0 +1,21 @@
+{
+  "Title": "Daily Fitness Quest",
+  "Tasks": [
+    {
+      "Description": "100 Push-Ups",
+      "Target": 100,
+      "Progress": 100
+    },
+    {
+      "Description": "Stretching for 15 Minutes",
+      "Target": 15,
+      "Progress": 0
+    },
+    {
+      "Description": "3 km Run",
+      "Target": 3,
+      "Progress": 0
+    }
+  ],
+  "lastResetDate": "2025-01-16T00:00:00+01:00"
+}

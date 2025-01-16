@@ -7,22 +7,56 @@
       "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|c:\\users\\kayel\\documents\\github\\thesystem\\sololevelingsystem\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|c:\\users\\kayel\\documents\\github\\thesystem\\sololevelingsystem\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|c:\\users\\kayel\\documents\\github\\thesystem\\sololevelingsystem\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\sololevelingsystem\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 322,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:2066174570:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Task.cs",
+              "RelativeDocumentMoniker": "SoloLevelingSystem\\Task.cs",
+              "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Task.cs",
+              "RelativeToolTip": "SoloLevelingSystem\\Task.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAywDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T07:25:00.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Player.cs",
+              "RelativeDocumentMoniker": "SoloLevelingSystem\\Player.cs",
+              "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Player.cs",
+              "RelativeToolTip": "SoloLevelingSystem\\Player.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAnwFIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T07:24:45.988Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -32,23 +66,37 @@
               "RelativeDocumentMoniker": "SoloLevelingSystem\\Program.cs",
               "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Program.cs",
               "RelativeToolTip": "SoloLevelingSystem\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwE8AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-15T10:47:50.893Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Quest.cs",
               "DocumentMoniker": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Quest.cs",
               "RelativeDocumentMoniker": "SoloLevelingSystem\\Quest.cs",
               "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Quest.cs",
               "RelativeToolTip": "SoloLevelingSystem\\Quest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAwGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-15T10:47:46.616Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 78,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

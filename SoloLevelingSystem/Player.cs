@@ -1,5 +1,7 @@
 ﻿using System;
-
+using System.IO;
+using System.Xml;
+using Newtonsoft.Json;
 public class Player
 {
     public string Name { get; private set; }
@@ -53,5 +55,49 @@ public class Player
         Console.WriteLine("=== LEVEL UP! ===");
         Console.WriteLine($"{Name} is now Level {Level}!");
         Console.WriteLine("Stats increased!");
+    }
+
+
+    // Save Player Progress
+    public void SaveProgress(string filePath = "player_save.json")
+    {
+        var playerData = new
+        {
+            Name,
+            Level,
+            CurrentXP,
+            XPToNextLevel,
+            Strength,
+            Agility,
+            Intelligence,
+            Vitality
+        };
+        string json = JsonConvert.SerializeObject(playerData, Newtonsoft.Json.Formatting.Indented);
+        File.WriteAllText(filePath, json);
+        Console.WriteLine("Player progress saved!");
+    }
+
+    // Load Player Progress
+    public void LoadProgress(string filePath = "player_save.json")
+    {
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            dynamic playerData = JsonConvert.DeserializeObject(json);
+            Name = playerData.Name;
+            Level = playerData.Level;
+            CurrentXP = playerData.CurrentXP;
+            XPToNextLevel = playerData.XPToNextLevel;
+            Strength = playerData.Strength;
+            Agility = playerData.Agility;
+            Intelligence = playerData.Intelligence;
+            Vitality = playerData.Vitality;
+
+            Console.WriteLine("Player progress loaded!");
+        }
+        else
+        {
+            Console.WriteLine("No save file found. Starting fresh.");
+        }
     }
 }

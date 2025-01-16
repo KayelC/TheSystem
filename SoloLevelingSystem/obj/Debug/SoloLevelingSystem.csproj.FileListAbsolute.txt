@@ -12,3 +12,6 @@ C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLevel
 C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.csproj.CoreCompileInputs.cache
 C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.exe
 C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLevelingSystem.pdb
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\bin\Debug\Newtonsoft.Json.xml
+C:\Users\kayel\Documents\GitHub\TheSystem\SoloLevelingSystem\obj\Debug\SoloLeve.7E898137.Up2Date

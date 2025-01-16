@@ -1,0 +1,10 @@
+{
+  "Name": "Fitness Enthusiast",
+  "Level": 1,
+  "CurrentXP": 0,
+  "XPToNextLevel": 100,
+  "Strength": 10,
+  "Agility": 10,
+  "Intelligence": 10,
+  "Vitality": 10
+}
