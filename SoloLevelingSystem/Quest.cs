@@ -52,7 +52,7 @@ public class Quest
         Console.WriteLine($"Quest '{Title}' has been reset and is ready for a new day!");
     }
 
-    private void CheckForReset()
+    public void CheckForReset()
     {
         if (DateTime.Now.Date > lastResetDate)
         {
