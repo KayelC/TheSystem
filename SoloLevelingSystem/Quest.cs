@@ -10,21 +10,31 @@ public class Quest
     public List<Task> Tasks { get; private set; }
     public bool IsCompleted => Tasks.All(t => t.IsCompleted);
 
-    public string Message { get; private set; }
+    private List<string> MessagePool { get; set; }
+    private string CurrentMessage { get; set; }
 
     private DateTime lastResetDate;
 
     public bool HasGivenReward { get; private set; } // New field
 
-    public Quest(string title, List<Task> tasks, string message)
+    public Quest(string title, List<Task> tasks, List<string> messagePool)
     {
         Title = title;
         Tasks = tasks;
-        Message = message;
+        MessagePool = messagePool;
+        CurrentMessage = GetRandomMessage();
         lastResetDate = DateTime.Now.Date;
     }
 
-
+    private string GetRandomMessage()
+    {
+        if (MessagePool != null && MessagePool.Count > 0)
+        {
+            Random rand = new Random();
+            return MessagePool[rand.Next(0, MessagePool.Count)];
+        }
+        return "No message available.";
+    }
     public void AddTaskProgress(int taskIndex, int amount)
     {
         CheckForReset(); // Automatically reset if needed
@@ -114,6 +124,6 @@ public class Quest
     {
         CheckForReset(); // Ensure up-to-date status
         string taskDetails = string.Join("\n", Tasks.Select((t, i) => $"{i + 1}. {t}"));
-        return $"{Title}\n{Message}\n{taskDetails}\nStatus: {(IsCompleted ? "Completed" : "In Progress")}";
+        return $"{Title}\n{CurrentMessage}\n{taskDetails}\nStatus: {(IsCompleted ? "Completed" : "In Progress")}";
     }
 }

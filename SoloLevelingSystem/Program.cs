@@ -16,18 +16,43 @@ class Program
             new Task("100 Push-Ups", 100),
             new Task("Stretching for 15 Minutes", 15),
             new Task("3 km Run", 3)
-        }, "[Daily Quest : Strength Training Has Arrived.]"),
+        },
+        new List<string>
+        {
+            "Strength Training Has Arrived",
+            "Train To Become a Formidable Combatant",
+            "Getting Ready To Become Powerful",
+            "Prepare To Break Your Limits",
+            "The Path To Greatness Has Been Set Before You",
+            "Only Through Hardship Will You Find True Strenght",
+            "Your Body is Your Weapnon- Sharpen It",
+            "Fate Favors the Bold- Seize Your Strength",
+            "The Strong Walk a Path of No Return- Are You Ready?",
+            "Power Will Be Yours, If You Dare Reach for it"
+        }),
             
         new Quest("Penalty Quest", new List<Task>
         {
             new Task("Survive For The Alloted Time", 4),
-        }, "[Penalty Quest : Survival]"),
+        },
+        new List<string>
+        {
+            "You Have Failed- Now Face The Consequences",
+            "The Price of Failure is Steep- Can You Pay It?",
+            "The Weak Shall Be Punished- Are You Strong Enough?",
+            "The Time of Reckoning Has Come- Will You Survive?",
+            "Only The Relentless Will Survive"
+        }),
 
         new Quest("Job Change Quest", new List<Task>
         {
             new Task("Spar", 10),
             new Task("Win a Bout", 1)
-        }, "[Job Change Quest : Meet The Requirements To Change Your Job]")
+        },
+        new List<string>
+        {
+            "The Time Has Come To Prove Your Worth"
+        }),
     };
 
         Quest currentQuest = availableQuests[0]; // Default to the first quest
