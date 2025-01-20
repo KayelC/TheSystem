@@ -15,6 +15,8 @@ public class Player
     public int Intelligence { get; private set; }
     public int Vitality { get; private set; }
 
+    public int UnallocatedAttributePoints { get; private set; }
+
     public Player(string name)
     {
         Name = name;
@@ -23,12 +25,59 @@ public class Player
         XPToNextLevel = 100;
 
         // Initial Stats
-        Strength = 10;
-        Agility = 10;
-        Intelligence = 10;
-        Vitality = 10;
+        Strength = 0;
+        Agility = 0;
+        Intelligence = 0;
+        Vitality = 0;
+        UnallocatedAttributePoints = 0;
     }
 
+    public void AddAttributePoints(int points)
+    {
+        UnallocatedAttributePoints += points;
+        Console.WriteLine($"You currently have {UnallocatedAttributePoints} unallocated points.");
+    }
+
+    public void DistributeAttributePoints()
+    {
+        while (UnallocatedAttributePoints > 0)
+        {
+            Console.Clear();
+            Console.WriteLine("Distribute your attribute points:");
+            Console.WriteLine($"1. Strength: {Strength}");
+            Console.WriteLine($"2. Agility: {Agility}");
+            Console.WriteLine($"3. Intelligence: {Intelligence}");
+            Console.WriteLine($"4. Vitality: {Vitality}");
+            Console.WriteLine($"Unallocated Points: {UnallocatedAttributePoints}");
+            Console.Write("Choose a stat to increase (1-4): ");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Strength++;
+                    break;
+                case "2":
+                    Agility++;
+                    break;
+                case "3":
+                    Intelligence++;
+                    break;
+                case "4":
+                    Vitality++;
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice, try again.");
+                    continue;
+            }
+
+            UnallocatedAttributePoints--;
+            Console.WriteLine("Point allocated!");
+        }
+
+        Console.WriteLine("All points have been distributed!");
+    }
     public void GainXP(int amount)
     {
         Console.WriteLine($"{Name} gained {amount} XP!");

@@ -29,7 +29,8 @@ class Program
             "Fate Favors the Bold- Seize Your Strength",
             "The Strong Walk a Path of No Return- Are You Ready?",
             "Power Will Be Yours, If You Dare Reach for it"
-        }),
+        },
+        3),
             
         new Quest("Penalty Quest", new List<Task>
         {
@@ -42,7 +43,8 @@ class Program
             "The Weak Shall Be Punished- Are You Strong Enough?",
             "The Time of Reckoning Has Come- Will You Survive?",
             "Only The Relentless Will Survive"
-        }),
+        },
+        3),
 
         new Quest("Job Change Quest", new List<Task>
         {
@@ -52,7 +54,8 @@ class Program
         new List<string>
         {
             "The Time Has Come To Prove Your Worth"
-        }),
+        },
+        20),
     };
 
         Quest currentQuest = availableQuests[0]; // Default to the first quest
@@ -67,7 +70,8 @@ class Program
             Console.WriteLine("===== Fitness Journal =====");
             Console.WriteLine($"Player: {player.Name}, Level: {player.Level}, XP: {player.CurrentXP}/{player.XPToNextLevel}");
             Console.WriteLine($"Stats: STR={player.Strength}, AGI={player.Agility}, VIT={player.Vitality}");
-            Console.WriteLine("\n[1] Quests\n[2] Load Progress\n[3] Save and Exit");
+            Console.WriteLine($"Unallocated Points: {player.UnallocatedAttributePoints}");
+            Console.WriteLine("\n[1] Quests\n[2] Distribute Attribute Points\n[3] Load Progress\n[4] Save and Exit");
             Console.Write("Choose an action: ");
 
             string choice = Console.ReadLine();
@@ -79,12 +83,16 @@ class Program
                     break;
 
                 case "2":
+                    player.DistributeAttributePoints();
+                    break;
+
+                case "3":
                     Console.WriteLine("Loading Progress...");
                     player.LoadProgress();
                     currentQuest.LoadState();
                     break;
 
-                case "3":
+                case "4":
                     Console.WriteLine("Saving Progress...");
                     player.SaveProgress();
                     currentQuest.SaveState();
@@ -176,12 +184,7 @@ class Program
             Console.Write("Enter progress amount: ");
             if (int.TryParse(Console.ReadLine(), out int progressAmount))
             {
-                currentQuest.AddTaskProgress(taskIndex - 1, progressAmount);
-
-                if (currentQuest.IsCompleted && !currentQuest.HasGivenReward)
-                {
-                    player.GainXP(100); // Example reward
-                }
+                currentQuest.AddTaskProgress(taskIndex - 1, progressAmount, player); // Quest handles rewards internally
             }
             else
             {

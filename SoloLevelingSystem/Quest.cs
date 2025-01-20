@@ -15,15 +15,17 @@ public class Quest
 
     private DateTime lastResetDate;
 
-    public bool HasGivenReward { get; private set; } // New field
+    public bool HasGivenReward { get; private set; }
+    private int AttributePointsReward { get; set; }
 
-    public Quest(string title, List<Task> tasks, List<string> messagePool)
+    public Quest(string title, List<Task> tasks, List<string> messagePool, int attributePointsReward)
     {
         Title = title;
         Tasks = tasks;
         MessagePool = messagePool;
         CurrentMessage = GetRandomMessage();
         lastResetDate = DateTime.Now.Date;
+        AttributePointsReward = attributePointsReward;
     }
 
     private string GetRandomMessage()
@@ -35,7 +37,7 @@ public class Quest
         }
         return "No message available.";
     }
-    public void AddTaskProgress(int taskIndex, int amount)
+    public void AddTaskProgress(int taskIndex, int amount, Player player)
     {
         CheckForReset(); // Automatically reset if needed
 
@@ -51,6 +53,12 @@ public class Quest
         {
             HasGivenReward = true; // Mark reward as given
             Console.WriteLine($"Quest '{Title}' completed!");
+
+            if (AttributePointsReward > 0)
+            {
+                Console.WriteLine($"You've earned {AttributePointsReward} attribute points!");
+                player.AddAttributePoints(AttributePointsReward); // Corrected reference
+            }
         }
     }
 
