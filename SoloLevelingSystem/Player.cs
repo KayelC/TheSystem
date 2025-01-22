@@ -48,14 +48,12 @@ public class Player
         Console.WriteLine($"Combat logged: {matchType}, Duration: {duration} min, Outcome: {outcome}, Opponent Level: {opponentLevel}, XP Earned: {xpEarned}");
     }
 
-    private int CalculateCombatXP(int duration, string outcome, int opponentLevel)
+    public static int CalculateCombatXP(int duration, string outcome, int opponentLevelBonus)
     {
         int baseXP = 10 * duration; // Base XP based on duration
-        int outcomeMultiplier = outcome == "Win" ? 2 : outcome == "Draw" ? 1 : 0; // Multiplier for outcomes
-        int levelDifference = opponentLevel - Level;
-        int levelBonus = levelDifference > 0 ? levelDifference * 5 : 0; // Bonus for fighting stronger opponents
+        int outcomeMultiplier = outcome == "win" ? 2 : outcome == "draw" ? 1 : 0; // Multiplier for outcomes
 
-        return baseXP * outcomeMultiplier + levelBonus;
+        return baseXP * outcomeMultiplier + (opponentLevelBonus * 10); // Bonus based on level difficulty
     }
 
     public void ViewCombatLogs()

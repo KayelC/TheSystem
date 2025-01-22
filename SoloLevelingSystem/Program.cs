@@ -123,28 +123,87 @@ class Program
     {
         Console.Clear();
         Console.WriteLine("=== Log Combat ===");
-        Console.Write("Enter Match Type (Sparring/Competition): ");
-        string matchType = Console.ReadLine();
 
-        Console.Write("Enter Duration (in minutes): ");
-        if (!int.TryParse(Console.ReadLine(), out int duration) || duration <= 0)
+        // Match Type Validation
+        string matchType;
+        while (true)
         {
-            Console.WriteLine("Invalid duration.");
-            return;
+            Console.Write("Enter Match Type (Sparring/Competition): ");
+            matchType = Console.ReadLine()?.Trim().ToLower();
+            if (matchType == "sparring" || matchType == "competition")
+            {
+                break;
+            }
+            Console.WriteLine("Invalid match type. Please enter 'Sparring' or 'Competition'.");
         }
 
-        Console.Write("Enter Outcome (Win/Loss/Draw): ");
-        string outcome = Console.ReadLine();
-
-        Console.Write("Enter Opponent Level: ");
-        if (!int.TryParse(Console.ReadLine(), out int opponentLevel) || opponentLevel < 0)
+        // Duration Validation
+        int duration;
+        while (true)
         {
-            Console.WriteLine("Invalid opponent level.");
-            return;
+            Console.Write("Enter Duration (in minutes): ");
+            if (int.TryParse(Console.ReadLine(), out duration) && duration > 0)
+            {
+                break;
+            }
+            Console.WriteLine("Invalid duration. Please enter a positive integer.");
         }
 
-        player.LogCombat(matchType, duration, outcome, opponentLevel);
+        // Outcome Validation
+        string outcome;
+        while (true)
+        {
+            Console.Write("Enter Outcome (Win/Loss/Draw): ");
+            outcome = Console.ReadLine()?.Trim().ToLower();
+            if (outcome == "win" || outcome == "loss" || outcome == "draw")
+            {
+                break;
+            }
+            Console.WriteLine("Invalid outcome. Please enter 'Win', 'Loss', or 'Draw'.");
+        }
+
+        // Opponent Level Validation
+        string opponentLevel;
+        while (true)
+        {
+            Console.Write("Enter Opponent Level (Easy/Normal/Hard/Very Hard): ");
+            opponentLevel = Console.ReadLine()?.Trim().ToLower();
+            if (opponentLevel == "easy" || opponentLevel == "normal" || opponentLevel == "hard" || opponentLevel == "very hard")
+            {
+                break;
+            }
+            Console.WriteLine("Invalid level. Please enter 'Easy', 'Normal', 'Hard', or 'Very Hard'.");
+        }
+
+        // Calculate XP based on opponent level
+        int opponentLevelBonus;
+        switch (opponentLevel)
+        {
+            case "easy":
+                opponentLevelBonus = 1;
+                break;
+            case "normal":
+                opponentLevelBonus = 2;
+                break;
+            case "hard":
+                opponentLevelBonus = 3;
+                break;
+            case "very hard":
+                opponentLevelBonus = 4;
+                break;
+            default:
+                opponentLevelBonus = 0; // Fallback, shouldn't be hit due to validation
+                break;
+        }
+
+        // Log combat details
+        int xpEarned = Player.CalculateCombatXP(duration, outcome, opponentLevelBonus);
+        player.LogCombat(matchType, duration, outcome, opponentLevelBonus);
+        Console.WriteLine($"Combat logged: {matchType}, Duration: {duration} min, Outcome: {outcome}, Opponent Level: {opponentLevel}, XP Earned: {xpEarned}");
     }
+
+    
+
 
     static void HandleQuestMenu(ref Quest currentQuest, List<Quest> availableQuests, Player player)
     {

@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|c:\\users\\kayel\\documents\\github\\thesystem\\sololevelingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\sololevelingsystem\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|c:\\users\\kayel\\documents\\github\\thesystem\\sololevelingsystem\\combatlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|c:\\users\\kayel\\documents\\github\\thesystem\\sololevelingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\sololevelingsystem\\combatlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\combatlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,12 +19,12 @@
       "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\dailyquest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\sololevelingsystem\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\sololevelingsystem\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\sololevelingsystem\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA0F6E33-DBE6-47C8-B689-3253901B1FB3}|SoloLevelingSystem\\SoloLevelingSystem.csproj|solutionrelative:sololevelingsystem\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\bin\\Debug\\quest_save.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 322,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "SoloLevelingSystem\\CombatLog.cs",
               "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\CombatLog.cs",
               "RelativeToolTip": "SoloLevelingSystem\\CombatLog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T09:31:17.149Z",
               "EditorCaption": ""
@@ -65,9 +65,10 @@
               "RelativeDocumentMoniker": "SoloLevelingSystem\\DailyQuest.cs",
               "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\DailyQuest.cs",
               "RelativeToolTip": "SoloLevelingSystem\\DailyQuest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T07:59:25.149Z"
+              "WhenOpened": "2025-01-22T07:59:25.149Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -83,53 +84,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Player.cs",
               "RelativeDocumentMoniker": "SoloLevelingSystem\\Player.cs",
               "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Player.cs",
               "RelativeToolTip": "SoloLevelingSystem\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAEwDIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-16T07:24:45.988Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Program.cs",
               "RelativeDocumentMoniker": "SoloLevelingSystem\\Program.cs",
               "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Program.cs",
               "RelativeToolTip": "SoloLevelingSystem\\Program.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAASwEUAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAALQAAAAAAAAAAAASwMIAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-15T10:47:50.893Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Quest.cs",
               "DocumentMoniker": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Quest.cs",
               "RelativeDocumentMoniker": "SoloLevelingSystem\\Quest.cs",
               "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Quest.cs",
               "RelativeToolTip": "SoloLevelingSystem\\Quest.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAEwEAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAcwHQAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T10:47:46.616Z"
+              "WhenOpened": "2025-01-15T10:47:46.616Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Task.cs",
               "DocumentMoniker": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Task.cs",
               "RelativeDocumentMoniker": "SoloLevelingSystem\\Task.cs",
               "ToolTip": "C:\\Users\\kayel\\Documents\\GitHub\\TheSystem\\SoloLevelingSystem\\Task.cs",
               "RelativeToolTip": "SoloLevelingSystem\\Task.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAIwDQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAIwBYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T07:25:00.194Z"
+              "WhenOpened": "2025-01-16T07:25:00.194Z",
+              "EditorCaption": ""
             }
           ]
         },
