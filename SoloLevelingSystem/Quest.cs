@@ -7,7 +7,7 @@ using System.Linq;
 public class Quest
 {
     public string Title { get; private set; }
-    public List<Task> Tasks { get; private set; }
+    public List<Task> Tasks { get; set; }
     public bool IsCompleted => Tasks.All(t => t.IsCompleted);
 
     private List<string> MessagePool { get; set; }
@@ -62,7 +62,7 @@ public class Quest
         }
     }
 
-    public void Reset()
+    public virtual void Reset()
     {
         foreach (var task in Tasks)
         {

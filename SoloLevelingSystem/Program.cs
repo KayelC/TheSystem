@@ -8,55 +8,57 @@ class Program
         // Initialize the player
         Player player = new Player("Fitness Enthusiast");
 
+        // Define weekly program for the daily quest
+        var weeklyProgram = new Dictionary<DayOfWeek, List<Task>>
+        {
+            { DayOfWeek.Monday, new List<Task> { new Task("50 Push-Ups", 50), new Task("2 km Run", 2) } },
+            { DayOfWeek.Tuesday, new List<Task> { new Task("100 Sit-Ups", 100), new Task("Stretching for 10 Minutes", 10) } },
+            { DayOfWeek.Wednesday, new List<Task> { new Task("30 Burpees", 30), new Task("Yoga for 15 Minutes", 15) } },
+            { DayOfWeek.Thursday, new List<Task> { new Task("Plank for 2 Minutes", 2), new Task("3 km Run", 3) } },
+            { DayOfWeek.Friday, new List<Task> { new Task("50 Squats", 50), new Task("Stretching for 20 Minutes", 20) } },
+            { DayOfWeek.Saturday, new List<Task> { new Task("5 km Run", 5), new Task("Cycling for 30 Minutes", 30) } },
+            { DayOfWeek.Sunday, new List<Task> { new Task("Meditation for 15 Minutes", 15) } }
+        };
+
         // Create quests
         List<Quest> availableQuests = new List<Quest>
-    {
-        new Quest("Daily Quest", new List<Task>
         {
-            new Task("100 Push-Ups", 100),
-            new Task("Stretching for 15 Minutes", 15),
-            new Task("3 km Run", 3)
-        },
-        new List<string>
-        {
-            "Strength Training Has Arrived",
-            "Train To Become a Formidable Combatant",
-            "Getting Ready To Become Powerful",
-            "Prepare To Break Your Limits",
-            "The Path To Greatness Has Been Set Before You",
-            "Only Through Hardship Will You Find True Strenght",
-            "Your Body is Your Weapnon- Sharpen It",
-            "Fate Favors the Bold- Seize Your Strength",
-            "The Strong Walk a Path of No Return- Are You Ready?",
-            "Power Will Be Yours, If You Dare Reach for it"
-        },
-        3),
-            
-        new Quest("Penalty Quest", new List<Task>
-        {
-            new Task("Survive For The Alloted Time", 4),
-        },
-        new List<string>
-        {
-            "You Have Failed- Now Face The Consequences",
-            "The Price of Failure is Steep- Can You Pay It?",
-            "The Weak Shall Be Punished- Are You Strong Enough?",
-            "The Time of Reckoning Has Come- Will You Survive?",
-            "Only The Relentless Will Survive"
-        },
-        3),
-
-        new Quest("Job Change Quest", new List<Task>
-        {
-            new Task("Spar", 10),
-            new Task("Win a Bout", 1)
-        },
-        new List<string>
-        {
-            "The Time Has Come To Prove Your Worth"
-        },
-        20),
-    };
+            new DailyQuest("Daily Quest", weeklyProgram,
+                new List<string>
+                {
+                    "Strength Training Has Arrived",
+                    "Train To Become a Formidable Combatant",
+                    "Getting Ready To Become Powerful",
+                    "Prepare To Break Your Limits",
+                    "The Path To Greatness Has Been Set Before You",
+                    "Only Through Hardship Will You Find True Strenght",
+                    "Your Body is Your Weapnon- Sharpen It",
+                    "Fate Favors the Bold- Seize Your Strength",
+                    "The Strong Walk a Path of No Return- Are You Ready?",
+                    "Power Will Be Yours, If You Dare Reach for it"
+                },
+                3), // Attribute points reward
+            new Quest("Penalty Quest", new List<Task>
+            {
+                new Task("Survive For The Allotted Time", 4),
+            },
+            new List<string>
+            {
+                "You Have Failed- Now Face The Consequences",
+                "The Price of Failure is Steep- Can You Pay It?"
+            },
+            3),
+            new Quest("Job Change Quest", new List<Task>
+            {
+                new Task("Spar", 10),
+                new Task("Win a Bout", 1)
+            },
+            new List<string>
+            {
+                "The Time Has Come To Prove Your Worth"
+            },
+            20)
+        };
 
         Quest currentQuest = availableQuests[0]; // Default to the first quest
 
@@ -64,7 +66,6 @@ class Program
         while (true)
         {
             ResetAllQuests(availableQuests); // Ensure all quests are up-to-date
-
 
             Console.Clear();
             Console.WriteLine("===== Fitness Journal =====");
@@ -149,7 +150,6 @@ class Program
         }
     }
 
-
     static Quest SelectQuest(List<Quest> availableQuests)
     {
         Console.Clear();
@@ -170,7 +170,6 @@ class Program
         Console.WriteLine("Invalid choice. Returning to quest menu.");
         return availableQuests[0]; // Default fallback
     }
-
 
     static void AddProgressToTask(Quest currentQuest, Player player)
     {
@@ -196,7 +195,6 @@ class Program
             Console.WriteLine("Invalid task number!");
         }
     }
-
 
     static void ResetAllQuests(List<Quest> availableQuests)
     {
