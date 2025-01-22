@@ -70,7 +70,7 @@ class Program
             Console.Clear();
             Console.WriteLine("===== Fitness Journal =====");
             Console.WriteLine($"Player: {player.Name}, Level: {player.Level}, XP: {player.CurrentXP}/{player.XPToNextLevel}");
-            Console.WriteLine($"Stats: STR={player.Strength}, AGI={player.Agility}, VIT={player.Vitality}");
+            Console.WriteLine($"Stats: STR={player.Strength}, AGI={player.Agility}, VIT={player.Vitality}, INT={player.Intelligence}, PER={player.Perception}");
             Console.WriteLine($"Unallocated Points: {player.UnallocatedAttributePoints}");
             Console.WriteLine("\n[1] Quests\n[2] Distribute Attribute Points\n[3] Load Progress\n[4] Save and Exit");
             Console.Write("Choose an action: ");

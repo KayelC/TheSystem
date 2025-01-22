@@ -14,7 +14,7 @@ public class Player
     public int Agility { get; private set; }
     public int Intelligence { get; private set; }
     public int Vitality { get; private set; }
-
+    public int Perception { get; private set; }
     public int UnallocatedAttributePoints { get; private set; }
 
     public Player(string name)
@@ -25,10 +25,11 @@ public class Player
         XPToNextLevel = 100;
 
         // Initial Stats
-        Strength = 0;
-        Agility = 0;
-        Intelligence = 0;
-        Vitality = 0;
+        Strength = 10;
+        Agility = 10;
+        Intelligence = 10;
+        Vitality = 10;
+        Perception = 10;
         UnallocatedAttributePoints = 0;
     }
 
@@ -48,6 +49,7 @@ public class Player
             Console.WriteLine($"2. Agility: {Agility}");
             Console.WriteLine($"3. Intelligence: {Intelligence}");
             Console.WriteLine($"4. Vitality: {Vitality}");
+            Console.WriteLine($"5. Perception: {Perception}");
             Console.WriteLine($"Unallocated Points: {UnallocatedAttributePoints}");
             Console.Write("Choose a stat to increase (1-4): ");
 
@@ -66,6 +68,9 @@ public class Player
                     break;
                 case "4":
                     Vitality++;
+                    break;
+                case "5":
+                    Perception++;
                     break;
                 default:
                     Console.WriteLine("Invalid choice, try again.");
@@ -96,10 +101,11 @@ public class Player
         XPToNextLevel += 50; // Increase XP threshold
 
         // Increase Stats
-        Strength += 5;
-        Agility += 5;
-        Intelligence += 5;
-        Vitality += 5;
+        Strength += 1;
+        Agility += 1;
+        Intelligence += 1;
+        Vitality += 1;
+        Perception += 1;
 
         Console.WriteLine("=== LEVEL UP! ===");
         Console.WriteLine($"{Name} is now Level {Level}!");
@@ -120,6 +126,7 @@ public class Player
             Agility,
             Intelligence,
             Vitality,
+            Perception,
             UnallocatedAttributePoints
         };
         string json = JsonConvert.SerializeObject(playerData, Newtonsoft.Json.Formatting.Indented);
@@ -142,6 +149,7 @@ public class Player
             Agility = playerData.Agility;
             Intelligence = playerData.Intelligence;
             Vitality = playerData.Vitality;
+            Perception = playerData.Perception;
             UnallocatedAttributePoints = playerData.UnallocatedAttributePoints;
 
             Console.WriteLine("Player progress loaded!");
