@@ -41,19 +41,20 @@ public class Player
 
     public void LogCombat(string matchType, int duration, string outcome, int opponentLevel)
     {
-        int xpEarned = CalculateCombatXP(duration, outcome, opponentLevel);
+        int xpEarned = CalculateCombatXP(matchType, duration, outcome, opponentLevel);
         GainXP(xpEarned);
 
         CombatLogs.Add(new CombatLog(matchType, duration, outcome, opponentLevel, xpEarned));
         Console.WriteLine($"Combat logged: {matchType}, Duration: {duration} min, Outcome: {outcome}, Opponent Level: {opponentLevel}, XP Earned: {xpEarned}");
     }
 
-    public static int CalculateCombatXP(int duration, string outcome, int opponentLevelBonus)
+    public static int CalculateCombatXP(string matchType, int duration, string outcome, int opponentLevelBonus)
     {
         int baseXP = 10 * duration; // Base XP based on duration
         int outcomeMultiplier = outcome == "win" ? 2 : outcome == "draw" ? 1 : 0; // Multiplier for outcomes
+        int matchTypeMultiplier = matchType == "sparring" ? 1 : matchType == "competition" ? 2 : 0; // Multiplier for match types
 
-        return baseXP * outcomeMultiplier + (opponentLevelBonus * 10); // Bonus based on level difficulty
+        return baseXP * outcomeMultiplier * matchTypeMultiplier + (opponentLevelBonus * 10); // Bonus based on level difficulty
     }
 
     public void ViewCombatLogs()

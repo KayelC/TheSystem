@@ -197,7 +197,7 @@ class Program
         }
 
         // Log combat details
-        int xpEarned = Player.CalculateCombatXP(duration, outcome, opponentLevelBonus);
+        int xpEarned = Player.CalculateCombatXP(matchType, duration, outcome, opponentLevelBonus);
         player.LogCombat(matchType, duration, outcome, opponentLevelBonus);
         Console.WriteLine($"Combat logged: {matchType}, Duration: {duration} min, Outcome: {outcome}, Opponent Level: {opponentLevel}, XP Earned: {xpEarned}");
     }
