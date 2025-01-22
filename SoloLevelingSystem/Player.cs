@@ -119,7 +119,8 @@ public class Player
             Strength,
             Agility,
             Intelligence,
-            Vitality
+            Vitality,
+            UnallocatedAttributePoints
         };
         string json = JsonConvert.SerializeObject(playerData, Newtonsoft.Json.Formatting.Indented);
         File.WriteAllText(filePath, json);
@@ -141,6 +142,7 @@ public class Player
             Agility = playerData.Agility;
             Intelligence = playerData.Intelligence;
             Vitality = playerData.Vitality;
+            UnallocatedAttributePoints = playerData.UnallocatedAttributePoints;
 
             Console.WriteLine("Player progress loaded!");
         }
