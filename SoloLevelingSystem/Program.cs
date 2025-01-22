@@ -72,7 +72,7 @@ class Program
             Console.WriteLine($"Player: {player.Name}, Level: {player.Level}, XP: {player.CurrentXP}/{player.XPToNextLevel}");
             Console.WriteLine($"Stats: STR={player.Strength}, AGI={player.Agility}, VIT={player.Vitality}, INT={player.Intelligence}, PER={player.Perception}");
             Console.WriteLine($"Unallocated Points: {player.UnallocatedAttributePoints}");
-            Console.WriteLine("\n[1] Quests\n[2] Distribute Attribute Points\n[3] Load Progress\n[4] Save and Exit");
+            Console.WriteLine("\n[1] Quests\n[2] Distribute Attribute Points\n[3] Load Progress\n[4] Save and Exit\n[5] Log Combat\n[6] View Combat Logs");
             Console.Write("Choose an action: ");
 
             string choice = Console.ReadLine();
@@ -100,6 +100,14 @@ class Program
                     Console.WriteLine("Exiting...");
                     return;
 
+                case "5":
+                    LogCombat(player);
+                    break;
+
+                case "6":
+                    player.ViewCombatLogs();
+                    break;
+
                 default:
                     Console.WriteLine("Invalid choice. Try again.");
                     break;
@@ -108,6 +116,34 @@ class Program
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
         }
+    }
+
+
+    static void LogCombat(Player player)
+    {
+        Console.Clear();
+        Console.WriteLine("=== Log Combat ===");
+        Console.Write("Enter Match Type (Sparring/Competition): ");
+        string matchType = Console.ReadLine();
+
+        Console.Write("Enter Duration (in minutes): ");
+        if (!int.TryParse(Console.ReadLine(), out int duration) || duration <= 0)
+        {
+            Console.WriteLine("Invalid duration.");
+            return;
+        }
+
+        Console.Write("Enter Outcome (Win/Loss/Draw): ");
+        string outcome = Console.ReadLine();
+
+        Console.Write("Enter Opponent Level: ");
+        if (!int.TryParse(Console.ReadLine(), out int opponentLevel) || opponentLevel < 0)
+        {
+            Console.WriteLine("Invalid opponent level.");
+            return;
+        }
+
+        player.LogCombat(matchType, duration, outcome, opponentLevel);
     }
 
     static void HandleQuestMenu(ref Quest currentQuest, List<Quest> availableQuests, Player player)

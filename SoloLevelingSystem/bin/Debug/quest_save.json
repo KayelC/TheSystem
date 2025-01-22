@@ -4,12 +4,12 @@
     {
       "Description": "30 Burpees",
       "Target": 30,
-      "Progress": 30
+      "Progress": 0
     },
     {
       "Description": "Yoga for 15 Minutes",
       "Target": 15,
-      "Progress": 15
+      "Progress": 0
     }
   ],
   "lastResetDate": "2025-01-22T00:00:00+01:00"
