@@ -2,15 +2,15 @@
   "Title": "Daily Quest",
   "Tasks": [
     {
-      "Description": "30 Burpees",
-      "Target": 30,
-      "Progress": 0
+      "Description": "Plank for 2 Minutes",
+      "Target": 2,
+      "Progress": 2
     },
     {
-      "Description": "Yoga for 15 Minutes",
-      "Target": 15,
-      "Progress": 0
+      "Description": "3 km Run",
+      "Target": 3,
+      "Progress": 3
     }
   ],
-  "lastResetDate": "2025-01-22T00:00:00+01:00"
+  "lastResetDate": "2025-01-23T00:00:00+01:00"
 }

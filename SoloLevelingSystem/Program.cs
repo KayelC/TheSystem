@@ -8,6 +8,8 @@ class Program
         // Initialize the player
         Player player = new Player("Fitness Enthusiast");
 
+        player.LoadCombatLogs(); // Load combat logs
+
         // Define weekly program for the daily quest
         var weeklyProgram = new Dictionary<DayOfWeek, List<Task>>
         {
@@ -97,6 +99,7 @@ class Program
                     Console.WriteLine("Saving Progress...");
                     player.SaveProgress();
                     currentQuest.SaveState();
+                    player.SaveCombatLogs(); // Save combat logs
                     Console.WriteLine("Exiting...");
                     return;
 

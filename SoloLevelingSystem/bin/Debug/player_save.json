@@ -1,12 +1,12 @@
 {
   "Name": "Fitness Enthusiast",
-  "Level": 1,
-  "CurrentXP": 0,
-  "XPToNextLevel": 100,
-  "Strength": 10,
-  "Agility": 10,
-  "Intelligence": 10,
-  "Vitality": 10,
-  "Perception": 10,
+  "Level": 2,
+  "CurrentXP": 290,
+  "XPToNextLevel": 150,
+  "Strength": 11,
+  "Agility": 11,
+  "Intelligence": 11,
+  "Vitality": 14,
+  "Perception": 11,
   "UnallocatedAttributePoints": 0
 }

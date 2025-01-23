@@ -67,6 +67,45 @@ public class Player
         }
     }
 
+    private const string CombatLogFilePath = "combat_logs.json";
+
+    public void SaveCombatLogs()
+    {
+        try
+        {
+            string json = JsonConvert.SerializeObject(CombatLogs, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(CombatLogFilePath, json);
+            Console.WriteLine("Combat logs saved!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving combat logs: {ex.Message}");
+        }
+    }
+
+    public void LoadCombatLogs()
+    {
+        try
+        {
+            if (File.Exists(CombatLogFilePath))
+            {
+                string json = File.ReadAllText(CombatLogFilePath);
+                CombatLogs = JsonConvert.DeserializeObject<List<CombatLog>>(json) ?? new List<CombatLog>();
+                Console.WriteLine("Combat logs loaded!");
+            }
+            else
+            {
+                CombatLogs = new List<CombatLog>();
+                Console.WriteLine("No combat logs found. Starting fresh.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading combat logs: {ex.Message}");
+            CombatLogs = new List<CombatLog>();
+        }
+    }
+
     public void AddAttributePoints(int points)
     {
         UnallocatedAttributePoints += points;

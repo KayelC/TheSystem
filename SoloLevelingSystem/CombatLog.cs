@@ -1,5 +1,6 @@
 ﻿using System;
 
+[Serializable]
 public class CombatLog
 {
     public DateTime Date { get; private set; }
