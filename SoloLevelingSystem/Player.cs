@@ -39,6 +39,69 @@ public class Player
         CombatLogs = new List<CombatLog>();
     }
 
+    private const string QuestLogFilePath = "quest_logs.json";
+
+    public List<QuestLog> QuestLogs { get; private set; } = new List<QuestLog>();
+
+    public void LogQuest(string questTitle, bool wasCompleted, string notes = "")
+    {
+        QuestLogs.Add(new QuestLog(questTitle, wasCompleted, notes));
+        Console.WriteLine($"Quest '{questTitle}' logged as {(wasCompleted ? "completed" : "failed")}.");
+    }
+
+    public void SaveQuestLogs()
+    {
+        try
+        {
+            string json = JsonConvert.SerializeObject(QuestLogs, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(QuestLogFilePath, json);
+            Console.WriteLine("Quest logs saved!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving quest logs: {ex.Message}");
+        }
+    }
+
+    public void LoadQuestLogs()
+    {
+        try
+        {
+            if (File.Exists(QuestLogFilePath))
+            {
+                string json = File.ReadAllText(QuestLogFilePath);
+                QuestLogs = JsonConvert.DeserializeObject<List<QuestLog>>(json) ?? new List<QuestLog>();
+                Console.WriteLine("Quest logs loaded!");
+            }
+            else
+            {
+                QuestLogs = new List<QuestLog>();
+                Console.WriteLine("No quest logs found. Starting fresh.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading quest logs: {ex.Message}");
+            QuestLogs = new List<QuestLog>();
+        }
+    }
+
+    public void ViewQuestLogs()
+    {
+        Console.Clear();
+        Console.WriteLine("=== Quest History ===");
+        if (QuestLogs.Count == 0)
+        {
+            Console.WriteLine("No quests logged yet.");
+        }
+        else
+        {
+            foreach (var log in QuestLogs)
+            {
+                Console.WriteLine(log);
+            }
+        }
+    }
     public void LogCombat(string matchType, int duration, string outcome, int opponentLevel)
     {
         int xpEarned = CalculateCombatXP(matchType, duration, outcome, opponentLevel);

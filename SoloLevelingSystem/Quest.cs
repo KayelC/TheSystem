@@ -59,6 +59,8 @@ public class Quest
                 Console.WriteLine($"You've earned {AttributePointsReward} attribute points!");
                 player.AddAttributePoints(AttributePointsReward); // Corrected reference
             }
+
+            player.LogQuest(Title, true, "Quest completed successfully!");
         }
     }
 

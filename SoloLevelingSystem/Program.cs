@@ -8,7 +8,7 @@ class Program
         // Initialize the player
         Player player = new Player("Fitness Enthusiast");
 
-        player.LoadCombatLogs(); // Load combat logs
+        
 
         // Define weekly program for the daily quest
         var weeklyProgram = new Dictionary<DayOfWeek, List<Task>>
@@ -74,7 +74,7 @@ class Program
             Console.WriteLine($"Player: {player.Name}, Level: {player.Level}, XP: {player.CurrentXP}/{player.XPToNextLevel}");
             Console.WriteLine($"Stats: STR={player.Strength}, AGI={player.Agility}, VIT={player.Vitality}, INT={player.Intelligence}, PER={player.Perception}");
             Console.WriteLine($"Unallocated Points: {player.UnallocatedAttributePoints}");
-            Console.WriteLine("\n[1] Quests\n[2] Distribute Attribute Points\n[3] Load Progress\n[4] Save and Exit\n[5] Log Combat\n[6] View Combat Logs");
+            Console.WriteLine("\n[1] Quests\n[2] Distribute Attribute Points\n[3] Load Progress\n[4] Save and Exit\n[5] Log Combat\n[6] View Combat Logs\n[7] View Quest Logs");
             Console.Write("Choose an action: ");
 
             string choice = Console.ReadLine();
@@ -93,6 +93,8 @@ class Program
                     Console.WriteLine("Loading Progress...");
                     player.LoadProgress();
                     currentQuest.LoadState();
+                    player.LoadCombatLogs(); // Load combat logs
+                    player.LoadQuestLogs(); // Load quest logs
                     break;
 
                 case "4":
@@ -100,6 +102,7 @@ class Program
                     player.SaveProgress();
                     currentQuest.SaveState();
                     player.SaveCombatLogs(); // Save combat logs
+                    player.SaveQuestLogs(); // Save quest logs
                     Console.WriteLine("Exiting...");
                     return;
 
@@ -109,6 +112,10 @@ class Program
 
                 case "6":
                     player.ViewCombatLogs();
+                    break;
+
+                case "7":
+                    player.ViewQuestLogs();
                     break;
 
                 default:
