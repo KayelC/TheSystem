@@ -8,6 +8,8 @@ class Program
         // Initialize the player
         Player player = new Player("Fitness Enthusiast");
 
+        player.LoadCombatLogs(); // Load combat logs
+
         // Define weekly program for the daily quest
         var weeklyProgram = new Dictionary<DayOfWeek, List<Task>>
         {
@@ -72,7 +74,7 @@ class Program
             Console.WriteLine($"Player: {player.Name}, Level: {player.Level}, XP: {player.CurrentXP}/{player.XPToNextLevel}");
             Console.WriteLine($"Stats: STR={player.Strength}, AGI={player.Agility}, VIT={player.Vitality}, INT={player.Intelligence}, PER={player.Perception}");
             Console.WriteLine($"Unallocated Points: {player.UnallocatedAttributePoints}");
-            Console.WriteLine("\n[1] Quests\n[2] Distribute Attribute Points\n[3] Load Progress\n[4] Save and Exit");
+            Console.WriteLine("\n[1] Quests\n[2] Distribute Attribute Points\n[3] Load Progress\n[4] Save and Exit\n[5] Log Combat\n[6] View Combat Logs");
             Console.Write("Choose an action: ");
 
             string choice = Console.ReadLine();
@@ -97,8 +99,17 @@ class Program
                     Console.WriteLine("Saving Progress...");
                     player.SaveProgress();
                     currentQuest.SaveState();
+                    player.SaveCombatLogs(); // Save combat logs
                     Console.WriteLine("Exiting...");
                     return;
+
+                case "5":
+                    LogCombat(player);
+                    break;
+
+                case "6":
+                    player.ViewCombatLogs();
+                    break;
 
                 default:
                     Console.WriteLine("Invalid choice. Try again.");
@@ -109,6 +120,93 @@ class Program
             Console.ReadKey();
         }
     }
+
+
+    static void LogCombat(Player player)
+    {
+        Console.Clear();
+        Console.WriteLine("=== Log Combat ===");
+
+        // Match Type Validation
+        string matchType;
+        while (true)
+        {
+            Console.Write("Enter Match Type (Sparring/Competition): ");
+            matchType = Console.ReadLine()?.Trim().ToLower();
+            if (matchType == "sparring" || matchType == "competition")
+            {
+                break;
+            }
+            Console.WriteLine("Invalid match type. Please enter 'Sparring' or 'Competition'.");
+        }
+
+        // Duration Validation
+        int duration;
+        while (true)
+        {
+            Console.Write("Enter Duration (in minutes): ");
+            if (int.TryParse(Console.ReadLine(), out duration) && duration > 0)
+            {
+                break;
+            }
+            Console.WriteLine("Invalid duration. Please enter a positive integer.");
+        }
+
+        // Outcome Validation
+        string outcome;
+        while (true)
+        {
+            Console.Write("Enter Outcome (Win/Loss/Draw): ");
+            outcome = Console.ReadLine()?.Trim().ToLower();
+            if (outcome == "win" || outcome == "loss" || outcome == "draw")
+            {
+                break;
+            }
+            Console.WriteLine("Invalid outcome. Please enter 'Win', 'Loss', or 'Draw'.");
+        }
+
+        // Opponent Level Validation
+        string opponentLevel;
+        while (true)
+        {
+            Console.Write("Enter Opponent Level (Easy/Normal/Hard/Very Hard): ");
+            opponentLevel = Console.ReadLine()?.Trim().ToLower();
+            if (opponentLevel == "easy" || opponentLevel == "normal" || opponentLevel == "hard" || opponentLevel == "very hard")
+            {
+                break;
+            }
+            Console.WriteLine("Invalid level. Please enter 'Easy', 'Normal', 'Hard', or 'Very Hard'.");
+        }
+
+        // Calculate XP based on opponent level
+        int opponentLevelBonus;
+        switch (opponentLevel)
+        {
+            case "easy":
+                opponentLevelBonus = 1;
+                break;
+            case "normal":
+                opponentLevelBonus = 2;
+                break;
+            case "hard":
+                opponentLevelBonus = 3;
+                break;
+            case "very hard":
+                opponentLevelBonus = 4;
+                break;
+            default:
+                opponentLevelBonus = 0; // Fallback, shouldn't be hit due to validation
+                break;
+        }
+
+        // Log combat details
+        int xpEarned = Player.CalculateCombatXP(matchType, duration, outcome, opponentLevelBonus);
+        player.LogCombat(matchType, duration, outcome, opponentLevelBonus);
+        Console.WriteLine($"Combat logged: {matchType}, Duration: {duration} min, Outcome: {outcome}, Opponent Level: {opponentLevel}, XP Earned: {xpEarned}");
+    }
+
+    
+
 
     static void HandleQuestMenu(ref Quest currentQuest, List<Quest> availableQuests, Player player)
     {

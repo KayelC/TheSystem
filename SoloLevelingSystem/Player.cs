@@ -2,6 +2,8 @@
 using System.IO;
 using System.Xml;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+
 public class Player
 {
     public string Name { get; private set; }
@@ -17,6 +19,8 @@ public class Player
     public int Perception { get; private set; }
     public int UnallocatedAttributePoints { get; private set; }
 
+    public List<CombatLog> CombatLogs { get; private set; }
+
     public Player(string name)
     {
         Name = name;
@@ -31,6 +35,75 @@ public class Player
         Vitality = 10;
         Perception = 10;
         UnallocatedAttributePoints = 0;
+
+        CombatLogs = new List<CombatLog>();
+    }
+
+    public void LogCombat(string matchType, int duration, string outcome, int opponentLevel)
+    {
+        int xpEarned = CalculateCombatXP(matchType, duration, outcome, opponentLevel);
+        GainXP(xpEarned);
+
+        CombatLogs.Add(new CombatLog(matchType, duration, outcome, opponentLevel, xpEarned));
+        Console.WriteLine($"Combat logged: {matchType}, Duration: {duration} min, Outcome: {outcome}, Opponent Level: {opponentLevel}, XP Earned: {xpEarned}");
+    }
+
+    public static int CalculateCombatXP(string matchType, int duration, string outcome, int opponentLevelBonus)
+    {
+        int baseXP = 10 * duration; // Base XP based on duration
+        int outcomeMultiplier = outcome == "win" ? 2 : outcome == "draw" ? 1 : 0; // Multiplier for outcomes
+        int matchTypeMultiplier = matchType == "sparring" ? 1 : matchType == "competition" ? 2 : 0; // Multiplier for match types
+
+        return baseXP * outcomeMultiplier * matchTypeMultiplier + (opponentLevelBonus * 10); // Bonus based on level difficulty
+    }
+
+    public void ViewCombatLogs()
+    {
+        Console.Clear();
+        Console.WriteLine("=== Combat History ===");
+        foreach (var log in CombatLogs)
+        {
+            Console.WriteLine(log);
+        }
+    }
+
+    private const string CombatLogFilePath = "combat_logs.json";
+
+    public void SaveCombatLogs()
+    {
+        try
+        {
+            string json = JsonConvert.SerializeObject(CombatLogs, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(CombatLogFilePath, json);
+            Console.WriteLine("Combat logs saved!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving combat logs: {ex.Message}");
+        }
+    }
+
+    public void LoadCombatLogs()
+    {
+        try
+        {
+            if (File.Exists(CombatLogFilePath))
+            {
+                string json = File.ReadAllText(CombatLogFilePath);
+                CombatLogs = JsonConvert.DeserializeObject<List<CombatLog>>(json) ?? new List<CombatLog>();
+                Console.WriteLine("Combat logs loaded!");
+            }
+            else
+            {
+                CombatLogs = new List<CombatLog>();
+                Console.WriteLine("No combat logs found. Starting fresh.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading combat logs: {ex.Message}");
+            CombatLogs = new List<CombatLog>();
+        }
     }
 
     public void AddAttributePoints(int points)
